@@ -14,6 +14,7 @@ const opts = {
                 secondary: "#3282B8",
                 accent: "#FFA500",
                 error: "#FF5252",
+                bg: "#1b262c",
             },
         },
     },
