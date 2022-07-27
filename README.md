@@ -1,5 +1,9 @@
 # jezreldave
 
+
+## My Personal Portfolio 
+### Made with Vue and Vuetify
+
 ## Project setup
 ```
 npm install
