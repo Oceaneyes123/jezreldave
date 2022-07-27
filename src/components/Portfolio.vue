@@ -8,14 +8,14 @@
       </div>
       <v-card class="rounded-xl glass">
         <v-row class="px-10 py-10">
-          <v-col>
+          <v-col cols="12" md="6">
             <div class="font-weight-bold mb-8">U Education</div>
             <div>
               U Education is a mobile application providing B2B services for
               online English academies.
             </div>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="12" md="6">
             <v-container>
               <v-row>
                 <v-col v-for="(item, i) in android" :key="i" cols="6" sm="3">
