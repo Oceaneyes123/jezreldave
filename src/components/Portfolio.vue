@@ -39,7 +39,7 @@
               <v-container>
                 <v-row>
                   <v-col v-for="(item, i) in android" :key="i" cols="6" sm="3">
-                    <v-img :src="item" @click="(androidPhoto = item), (androidPhotoDialog = true)"
+                    <v-img :src="item" @click="(androidPhoto = item), (androidPhotoDialog = true)" eager
                       style="cursor: pointer"></v-img>
                   </v-col>
                 </v-row>
@@ -62,7 +62,7 @@
                 <v-carousel-item v-for="(item, i) in websites" :key="i" :src="item">
                   <div class="d-flex justify-center align-center rounded-xl">
                     <v-card class="rounded-xl d-flex align-center justify-center">
-                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain>
+                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain eager>
                       </v-img>
                     </v-card>
                   </div>
