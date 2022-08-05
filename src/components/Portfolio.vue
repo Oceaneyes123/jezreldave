@@ -52,14 +52,14 @@
         <h3>Web Development</h3>
       </div>
       <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
-        <v-container>
+        <v-container fluid>
           <v-row>
             <v-col cols="12" md="6">
               <v-carousel v-model="webCarousel" class="rounded-xl">
                 <v-carousel-item v-for="(item, i) in websites" :key="i" :src="item">
-                  <div style="height:100%" class="d-flex justify-center align-center rounded-xl">
-                    <v-card class="rounded-xl d-flex align-center justify-center" style="height:100%">
-                      <v-img :src="item.image" height="100%" contain></v-img>
+                  <div class="d-flex justify-center align-center rounded-xl">
+                    <v-card class="rounded-xl d-flex align-center justify-center">
+                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain></v-img>
                     </v-card>
                   </div>
                 </v-carousel-item>
@@ -78,19 +78,16 @@
                       <li v-for="(item, i) in websites[webCarousel].stacks" :key="i">{{item}}</li>
                     </ul>
                   </v-col>
-                  <v-col cols="6" sm="6">
-                    <div class="mt-3">
-                      Applications:
-                    </div>
-                    <ul>
-                      <li v-for="(item, i) in websites[webCarousel].application" :key="i">{{item}}</li>
-                    </ul>
-                  </v-col>
                 </v-row>
               </v-container>
             </v-col>
           </v-row>
         </v-container>
+           <v-row justify="end">
+                  <v-btn outlined color="accent " class="mb-5 mr-5 rounded-lg" @click="openLink(websites[webCarousel].link)">
+                    <span class="font-weight-bold">Visit Site</span>
+                  </v-btn>
+                </v-row>
       </v-card>
       <div class="mt-10 mb-5 text font-weight-bold secondary--text">
         <h3>Personal Projects</h3>
@@ -169,5 +166,11 @@
       ],
       personal: [],
     }),
+
+    methods: {
+      openLink(link) {
+        window.open(link, "_blank");
+      },
+    },
   };
 </script>
