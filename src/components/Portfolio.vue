@@ -54,19 +54,23 @@
       <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
         <v-container fluid>
           <v-row>
+            <v-col v-if="$vuetify.breakpoint.smAndDown">
+              <h2 class=" font-weight-bold">{{websites[webCarousel].title}}</h2>
+            </v-col>
             <v-col cols="12" md="6">
-              <v-carousel v-model="webCarousel" class="rounded-xl">
+              <v-carousel v-model="webCarousel" class="rounded-xl" cycle>
                 <v-carousel-item v-for="(item, i) in websites" :key="i" :src="item">
                   <div class="d-flex justify-center align-center rounded-xl">
                     <v-card class="rounded-xl d-flex align-center justify-center">
-                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain></v-img>
+                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain>
+                      </v-img>
                     </v-card>
                   </div>
                 </v-carousel-item>
               </v-carousel>
             </v-col>
             <v-col cols="12" md="6">
-              <h2 class="mt-10 font-weight-bold mb-8">{{websites[webCarousel].title}}</h2>
+              <h2 v-if="$vuetify.breakpoint.mdAndUp" class="mt-10 font-weight-bold mb-8">{{websites[webCarousel].title}}</h2>
               <div>{{websites[webCarousel].description}}</div>
               <v-container fluid>
                 <v-row>
@@ -83,21 +87,21 @@
             </v-col>
           </v-row>
         </v-container>
-           <v-row justify="end">
-                  <v-btn outlined color="accent " class="mb-5 mr-5 rounded-lg" @click="openLink(websites[webCarousel].link)">
-                    <span class="font-weight-bold">Visit Site</span>
-                  </v-btn>
-                </v-row>
+        <v-row justify="end">
+          <v-btn outlined color="accent " class="mb-5 mr-5 rounded-lg" @click="openLink(websites[webCarousel].link)">
+            <span class="font-weight-bold">Visit Site</span>
+          </v-btn>
+        </v-row>
       </v-card>
       <div class="mt-10 mb-5 text font-weight-bold secondary--text">
         <h3>Personal Projects</h3>
       </div>
-        <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
-          <v-container class="text-center">
-              This is an ongoing section. Will be updated soon.
-          </v-container>
-        </v-card>
-      
+      <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
+        <v-container class="text-center">
+          This is an ongoing section. Will be updated soon.
+        </v-container>
+      </v-card>
+
     </v-container>
 
     <v-dialog v-model="androidPhotoDialog" max-width="400">
