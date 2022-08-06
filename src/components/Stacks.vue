@@ -15,7 +15,8 @@
           sm="4"
           md="3"
         >
-          <v-card>
+          <v-card class="d-flex flex-column justify-center align-center pa-5">
+            <v-img :src="item.image" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
             </v-card-text>
@@ -35,7 +36,8 @@
           sm="4"
           md="3"
         >
-          <v-card>
+          <v-card class="d-flex flex-column justify-center align-center pa-5">
+            <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
             </v-card-text>
@@ -47,7 +49,8 @@
 
       <v-row class="mb-10">
         <v-col v-for="(item, i) in skills" :key="i" cols="12" sm="4" md="3">
-          <v-card>
+          <v-card class="d-flex flex-column justify-center align-center pa-5">
+             <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
             </v-card-text>
@@ -83,27 +86,33 @@ export default {
     fundamentalLanguages: [
       {
         name: "HTML",
+        image: require("../assets/stack/html.png"),
       },
       {
         name: "CSS",
+        image: require("../assets/stack/css.png"),
       },
       {
         name: "JavaScript",
+        image: require("../assets/stack/js.png"),
       },
       {
         name: "PHP",
+        image: require("../assets/stack/php.png"),
       },
       {
         name: "Java",
+        image: require("../assets/stack/java.png"),
       },
       {
         name: "Python",
+        image: require("../assets/stack/python.png"),
       },
     ],
     advanceLanguages: [
       {
         name: "VueJS",
-        logo: "",
+        logo: require("../assets/stack/vue.png"),
       },
       {
         name: "Vuetify",
@@ -111,7 +120,7 @@ export default {
       },
       {
         name: "NodeJS",
-        logo: "",
+        logo: require("../assets/stack/node.png"),
       },
       {
         name: "Laravel",
@@ -123,14 +132,14 @@ export default {
       },
       {
         name: "ReactJS",
-        logo: "",
+       logo: require("../assets/stack/react.png"),
       },
     ],
 
     skills: [
       {
         name: "Web Development",
-        logo: "",
+        logo: require("../assets/stack/web.png"),
       },
       {
         name: "Android/Mobile Development",
