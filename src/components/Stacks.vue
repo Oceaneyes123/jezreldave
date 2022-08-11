@@ -50,7 +50,7 @@
       <v-row class="mb-10">
         <v-col v-for="(item, i) in skills" :key="i" cols="12" sm="4" md="3">
           <v-card class="d-flex flex-column justify-center align-center pa-5">
-             <v-img :src="item.logo" max-width="75" eager></v-img>
+            <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
             </v-card-text>
@@ -64,7 +64,8 @@
 
       <v-row class="mb-10">
         <v-col v-for="(item, i) in softwares" :key="i" cols="12" sm="4" md="3">
-          <v-card>
+          <v-card class="d-flex flex-column justify-center align-center pa-5">
+            <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
             </v-card-text>
@@ -116,7 +117,7 @@ export default {
       },
       {
         name: "Vuetify",
-        logo: "",
+        logo: "https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png",
       },
       {
         name: "NodeJS",
@@ -124,11 +125,11 @@ export default {
       },
       {
         name: "Laravel",
-        logo: "",
+        logo: require("../assets/stack/laravel.png"),
       },
       {
         name: "CodeIgniter",
-        logo: "",
+        logo: require("../assets/stack/codeigniter.svg"),
       },
       {
         name: "ReactJS",
@@ -143,46 +144,46 @@ export default {
       },
       {
         name: "Android/Mobile Development",
-        logo: "",
+        logo:  require("../assets/stack/android.png"),
       },
       {
         name: "Git",
-        logo: "",
+        logo:  require("../assets/stack/git.png"),
       },
     ],
 
     softwares: [
       {
         name: "Visual Studio Code",
-        logo: "",
+        logo: require("../assets/stack/vscode.svg"),
       },
       {
         name: "Android Studio",
-        logo: "",
+        logo:  require("../assets/stack/android.png"),
       },
       {
         name: "Github",
-        logo: "",
+        logo:  require("../assets/stack/github.png"),
       },
       {
         name: "Bitbucket",
-        logo: "",
+        logo:  require("../assets/stack/bitbucket.png"),
       },
       {
         name: "Jira (Atlassian)",
-        logo: "",
+        logo:  require("../assets/stack/jira.png"),
       },
       {
         name: "Figma",
-        logo: "",
+        logo: require("../assets/stack/figma.png"),
       },
       {
         name: "Adobe XD",
-        logo: "",
+        logo: require("../assets/stack/xd.png"),
       },
       {
         name: "Adobe Photoshop",
-        logo: "",
+        logo:  require("../assets/stack/photoshop.png"),
       },
     ],
   }),
