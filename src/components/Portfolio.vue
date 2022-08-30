@@ -97,8 +97,52 @@
         <h3>Personal Projects</h3>
       </div>
       <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
-        <v-container class="text-center">
-          This is an ongoing section. Will be updated soon.
+        <v-container fluid>
+          <!-- This is an ongoing section. Will be updated soon. -->
+
+          <v-row>
+            <v-col v-if="$vuetify.breakpoint.smAndDown">
+              <h2 class=" font-weight-bold">{{personal[personalCarousel].title}}</h2>
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-carousel v-model="personalCarousel" class="rounded-xl" cycle>
+                <v-carousel-item v-for="(item, i) in personal" :key="i" :src="item">
+                  <div class="d-flex justify-center align-center rounded-xl">
+                    <v-card class="rounded-xl d-flex align-center justify-center">
+                      <v-img :src="item.image" :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'" contain eager>
+                      </v-img>
+                    </v-card>
+                  </div>
+                </v-carousel-item>
+              </v-carousel>
+            </v-col>
+            <v-col cols="12" md="6">
+              <h2 v-if="$vuetify.breakpoint.mdAndUp" class="mt-10 font-weight-bold mb-8">{{personal[personalCarousel].title}}</h2>
+              <div>{{personal[personalCarousel].description}}</div>
+              <v-container fluid>
+                <v-row>
+                  <v-col cols="6" sm="6">
+                    <div class="mt-3">
+                      Stacks:
+                    </div>
+                    <ul>
+                      <li v-for="(item, i) in personal[personalCarousel].stacks" :key="i">{{item}}</li>
+                    </ul>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-col>
+          </v-row>
+          <v-row justify="end">
+              <v-btn text color="accent " class="mb-5 mr-5 rounded-lg" @click="openLink(personal[personalCarousel].github)">
+                <span class="font-weight-bold">View on Github</span>
+              </v-btn>
+              <v-btn outlined color="accent " class="mb-5 mr-5 rounded-lg" @click="openLink(personal[personalCarousel].link)">
+                <span class="font-weight-bold">Visit Site</span>
+              </v-btn>
+          </v-row>
+
+          <!--  -->
         </v-container>
       </v-card>
 
@@ -133,6 +177,7 @@
       androidPhoto: null,
       androidPhotoDialog: false,
       webCarousel: 0,
+      personalCarousel: 0,
       android: [
         require("../assets/android/android1.png"),
         require("../assets/android/android2.png"),
@@ -168,7 +213,35 @@
           link: "https://ueducms.org/webbooks/#/book-list?enc=MDAxfHN0dWRlbnR8bWVnYXRhbGtpbmc%3D%2F",
         }
       ],
-      personal: [],
+      personal: [
+        {
+          title: "HTMLite",
+          description: "A HTML and CSS compiler made with Vue",
+          stacks: ["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"],
+          application: ["Visual Studio Code", "Git", "Bitbucket", "Figma"],
+          image: require("../assets/personal/htmlite.png"),
+          link: "https://htmlite.vercel.app/",
+          github: "https://github.com/Oceaneyes123/HTMLite"
+        },
+         {
+          title: "Jezrel Dave Sondia - Personal Portfolio",
+          description: "A portfolio website by Jezrel Dave Sondia",
+          stacks: ["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"],
+          application: ["Visual Studio Code", "Git", "Bitbucket", "Figma"],
+          image: require("../assets/personal/portfolio.png"),
+          link: "https://jezreldave.vercel.app//",
+          github: "https://github.com/Oceaneyes123/jezreldave"
+        },
+        {
+          title: "Through the Glass Creatives - Blog Page",
+          description: "A simple blog page made for Through the Glass Creatives",
+          stacks: ["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"],
+          application: ["Visual Studio Code", "Git", "Bitbucket", "Figma"],
+          image: require("../assets/personal/throughtheglass.png"),
+          link: "https://throughtheglasscreatives.vercel.app/#/",
+          github: "https://github.com/Oceaneyes123/throughtheglasscreatives"
+        }
+      ],
     }),
 
     methods: {
