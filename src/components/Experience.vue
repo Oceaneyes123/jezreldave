@@ -6,15 +6,15 @@
 
         <v-timeline  :dense="$vuetify.breakpoint.smAndDown">
             <v-timeline-item v-for="(item, i) in experiences" :key="i" fill-dot :small="$vuetify.breakpoint.smAndDown">
-                <span slot="opposite" class="font-weight-bold">{{item.date}}</span>
-                <v-card :color="item.color" dark>
+                <div slot="opposite" class="font-weight-bold" :data-aos="i % 2 == 0 ? 'fade-right':'fade-left'"  >{{item.date}}</div>
+                <v-card :color="item.color" dark :data-aos="i % 2 == 0 ? 'fade-left':'fade-right'" data-aos-duration="1500"   data-aos-offset="300">
                     <v-card-title style="word-break:keep-all">
                         {{item.title}}
                     </v-card-title>
                     <v-card-subtitle class="accent--text">
                         {{item.company}} <br> <span v-if="$vuetify.breakpoint.smAndDown">{{item.date}}</span>
                     </v-card-subtitle>
-                    <v-card-text class="white text--primary pt-5">
+                    <v-card-text class="white black--text pt-5">
                         <p v-html="item.description"></p>
                     </v-card-text>
                 </v-card>
@@ -32,6 +32,8 @@
     
 <script>
 /* eslint-disable */
+import AOS from 'aos'
+import "aos/dist/aos.css";
 export default {
   name: "Experience",
 
@@ -87,5 +89,9 @@ export default {
         }
     ]
   }),
+
+   mounted(){
+    AOS.init()
+  }
 };
 </script>

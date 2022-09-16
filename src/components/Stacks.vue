@@ -1,7 +1,7 @@
 <template>
   <div id="stacks">
     <v-container style="max-width: 1200px">
-      <div class="header text-center my-10">Stacks</div>
+      <div class="header text-center my-10" data-aos="fade-up">Stacks</div>
 
       <div class="mb-5 text font-weight-bold secondary--text">
         Fundamental Languages
@@ -15,7 +15,7 @@
           sm="4"
           md="3"
         >
-          <v-card class="d-flex flex-column justify-center align-center pa-5">
+          <v-card class="d-flex flex-column justify-center align-center pa-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
             <v-img :src="item.image" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
@@ -36,7 +36,7 @@
           sm="4"
           md="3"
         >
-          <v-card class="d-flex flex-column justify-center align-center pa-5">
+          <v-card class="d-flex flex-column justify-center align-center pa-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
             <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
@@ -49,7 +49,7 @@
 
       <v-row class="mb-10">
         <v-col v-for="(item, i) in skills" :key="i" cols="12" sm="4" md="3">
-          <v-card class="d-flex flex-column justify-center align-center pa-5">
+          <v-card class="d-flex flex-column justify-center align-center pa-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
             <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
@@ -64,7 +64,7 @@
 
       <v-row class="mb-10">
         <v-col v-for="(item, i) in softwares" :key="i" cols="12" sm="4" md="3">
-          <v-card class="d-flex flex-column justify-center align-center pa-5">
+          <v-card class="d-flex flex-column justify-center align-center pa-5" data-aos="fade-up" data-aos-duration="1500"> 
             <v-img :src="item.logo" max-width="75" eager></v-img>
             <v-card-text class="text-center primary--text">
               {{ item.name }}
@@ -80,6 +80,8 @@
 
 <script>
 /* eslint-disable */
+import AOS from 'aos'
+import "aos/dist/aos.css";
 export default {
   name: "Skills",
 
@@ -187,5 +189,9 @@ export default {
       },
     ],
   }),
+
+  mounted(){
+    AOS.init()
+  }
 };
 </script>

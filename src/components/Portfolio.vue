@@ -6,7 +6,7 @@
       <div class="mb-5 text font-weight-bold secondary--text">
         <h3>Android Development</h3>
       </div>
-      <v-card dark class="rounded-xl glass" color="#1b262c">
+      <v-card dark class="rounded-xl glass" color="#1b262c"  data-aos="zoom-in-right"  data-aos-duration="1500" >
         <v-container>
           <v-row class="px-10 py-10">
             <v-col cols="12" md="6">
@@ -51,7 +51,7 @@
       <div class="mt-10 mb-5 text font-weight-bold secondary--text">
         <h3>Web Development</h3>
       </div>
-      <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
+      <v-card dark class="rounded-xl glass pa-5" color="#1b262c"  data-aos="zoom-in-left"  data-aos-duration="1500">
         <v-container fluid>
           <v-row>
             <v-col v-if="$vuetify.breakpoint.smAndDown">
@@ -96,7 +96,7 @@
       <div class="mt-10 mb-5 text font-weight-bold secondary--text">
         <h3>Personal Projects</h3>
       </div>
-      <v-card dark class="rounded-xl glass pa-5" color="#1b262c">
+      <v-card dark class="rounded-xl glass pa-5" color="#1b262c"   data-aos="zoom-in-left"  data-aos-duration="1500">
         <v-container fluid>
           <!-- This is an ongoing section. Will be updated soon. -->
 
@@ -170,6 +170,8 @@
 
 <script>
   /* eslint-disable */
+  import AOS from 'aos'
+  import "aos/dist/aos.css";
   export default {
     name: "Portfolio",
 

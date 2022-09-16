@@ -4,16 +4,17 @@
       <v-flex class="d-flex flex-column justify-center align-center">
         <div class="mb-16">
           <div class="white--text my-name text-center">
-            <h3>
+            <h3 data-aos="fade-up" data-aos-duration="1500">
               Hi, <br v-if="$vuetify.breakpoint.xsOnly" />I'm
-              <span class="accent--text"> Jezrel Dave</span>
+              <span class="accent--text" > Jezrel Dave</span>
             </h3>
           </div>
           <div
             class="white--text text-center mt-5 montserrat"
             style="font-size: 1.3rem"
+            data-aos="fade-down" data-aos-duration="3000"
           >
-            <span class="accent--text">Full Stack Web Developer</span>
+            <span class="accent--text" >Full Stack Web Developer</span>
           </div>
         </div>
         <div style="position: absolute; bottom: 50px">
@@ -40,9 +41,15 @@
 
 <script>
 /* eslint-disable */
+import AOS from 'aos'
 export default {
+ 
   name: "Home",
 
   data: () => ({}),
+
+  created() {
+    AOS.init()
+  }
 };
 </script>
